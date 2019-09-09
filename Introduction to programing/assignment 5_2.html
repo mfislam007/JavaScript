@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lines and triangles</title>
+  
+<style>
+canvas {
+   border: 1px solid black;
+}
+</style>
+
+<script>
+//two-dimensional drawing context
+var context;
+//Function draws a line on canvas from point (x1, y1) 
+//to point (x2, y2) with color
+function myDrawLine(x1, y1, x2, y2, color)
+{
+	context.beginPath(); 		//begin a new separate segment 
+	context.lineWidth = 1;
+	context.strokeStyle = color;	
+	//Draw line
+	context.moveTo(x1, y1);    //move to point (x1, y1)
+	context.lineTo(x2, y2);    //travel from current point to point (x2, y2)
+	context.stroke();           //make line appear	
+}
+
+function myDrawTriangle(x1, y1, x2, y2, x3, y3, color)
+{
+	context.beginPath(); 		//begin a new separate segment 
+	context.lineWidth = 1;
+	context.strokeStyle = color;	
+	//Draw line
+	context.moveTo(x1, y1);    //move to point (x1, y1)
+	context.lineTo(x2, y2);    //travel from current point to point (x2, y2)
+	context.moveTo(x2, y2);
+	context.lineTo(x3, y3);
+	context.moveTo(x3, y3);
+	context.lineTo(x1, y1);
+	context.stroke();           //make line appear	
+}
+//Function init is called right after the page is loaded
+function init()
+{
+	var canvas = document.getElementById("myCanvas");
+	context = canvas.getContext("2d");
+	var w = canvas.width;  
+	var h = canvas.height;
+	//upper left corner of canvas is point (0, 0)
+	myDrawLine(10, 20, 110, 50, "red"); //arbitrary red line
+	myDrawLine(0, h/2, w, h/2, "blue"); //horizontal line that halves canvas 
+	myDrawLine(w/2,0,w/2,h, "yellow");
+	myDrawLine(0,0,500,300, "red");
+	myDrawLine(0,300,500,0, "red");
+	myDrawTriangle(20,80,80,80,50,20,"blue");
+}
+window.onload = init;
+
+
+
+</script>
+
+</head>
+
+<body>
+
+<canvas id="myCanvas" width="500" height="300"></canvas>
+
+
+
+</body>
+</html>

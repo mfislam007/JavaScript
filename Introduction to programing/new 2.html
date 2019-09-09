@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+
+   <head>
+      <meta charset="utf-8">
+      <title>The area of a circle</title>
+   </head>
+
+   <body>
+      <h1>The area of a circle</h1>
+      
+      <p id="radius"></p>
+      <p id="result"></p>
+      <script>
+          /* This program calculates the area 
+             of a circle. */
+          var radius, area;
+          radius = Number(prompt("What is the radius?"));
+          area = Math.PI * radius * radius;   //the formula of the area
+          document.getElementById("result").innerHTML = "The area is " + area.toFixed(2) +" m<sup>2</sup>";
+		  document.getElementById("radius").innerHTML = "Radius is  " + radius +" m";
+		  //alert("The area is " + area.toFixed(2));
+		  console.log("Area " + area);
+      </script>
+   </body>
+
+</html>

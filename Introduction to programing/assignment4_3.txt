@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="utf-8" />
+<head><title>Addition exercise</title>
+<script>
+
+/* Function gives two random numbers, asks their sum
+and checks the answer. */
+function question() {
+    //variables
+    var num1, num2, sum, answer;
+	
+    //two random numbers between 1 and 1000
+    num1 = Math.floor(Math.random()*1000) + 1;
+    num2 = Math.floor(Math.random()*1000) + 1;
+    //the sum of the numbers
+    sum = num1 + num2;
+    //ask user
+    answer = Number(prompt("What is " + num1 + " + " + num2));
+    //is the answer right
+    if (answer == sum)
+        alert("Correct! " + num1 + " + " + num2 + " = " + sum);
+    else
+        alert("Your answer " + answer + " was wrong! " + num1 + " + " + num2 + " = " + sum);
+}
+
+</script>
+</head>
+
+<body>
+
+<h1>Addition exercise</h1>
+
+<button onclick="question()">New question</button>
+
+</body>
+</html>

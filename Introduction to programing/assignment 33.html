@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Calculates the total price os an order</title>
+<script>
+"use strict";
+//Function to calculate the total price os an order
+function totalprice() {
+    var product_price, quantity, total;
+    product_price = Number(prompt("What is the price of the product?"));
+	quantity = Number(prompt("What is the quantity?"));
+    total = product_price * quantity;
+    document.getElementById("id1").value = total.toFixed(2);
+	if (quantity < 20) {
+        document.getElementById("id2").innerHTML = "no discount";
+    }
+	if (quantity >=20 && quantity <50) {
+        document.getElementById("id2").innerHTML = "the discount is 10%";
+		 document.getElementById("id1").value = (total*0.9).toFixed(2);
+    }
+	if (quantity >= 50 && quantity <100) {
+        document.getElementById("id2").innerHTML = "the discount is 20%";
+		document.getElementById("id1").value = (total*0.8).toFixed(2);
+    }
+	if (quantity >= 100) {
+        document.getElementById("id2").innerHTML = "the discount is 30%";
+		document.getElementById("id1").value = (total*0.7).toFixed(2);
+    }
+	
+}
+</script>
+</head>
+
+<body>
+
+<h1>Calculates the total price os an order</h1>
+
+<p>
+Give the price of a product and the quantity and click the Calculate button.
+</p>
+
+
+
+<input type="button" value="Calculate" onclick="totalprice()" >
+<p>
+Total: <input id="id1" type="text" disabled>
+<p id= "id2"></p>
+
+</body>
+</html>
