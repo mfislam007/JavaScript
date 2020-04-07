@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+
+   <head>
+      <meta charset="utf-8">
+      <title>The area of a Triangle</title>
+   </head>
+
+   <body>
+      <h1>The area of a Triangle</h1>
+      
+      <p id="result"></p>
+      
+      <script>
+          /* This program calculates the area 
+             of a Triangle. */
+          var base, area,height;
+          base = Number(prompt("What is the base?"));
+		  height = Number(prompt("What is the height?"));
+          area = base * height/2;   //the formula of the area of Triangle
+          document.getElementById("result").innerHTML = "The area is " + area;
+      </script>
+   </body>
+
+</html>

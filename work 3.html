@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+   <head>
+      <meta charset="utf-8">
+      <title>The distance calculation</title>
+   </head>
+
+   <body>
+      <h1>The distance calculation</h1>
+      
+      <p id="result"></p>
+      <p id="result1"></p>
+	  <p id="result2"></p>
+      <script>
+          /* This program calculates the The distance calculation. */
+          var v,t,r,s,Total;
+          v = Number(prompt("What is the velocity v of the car is entered in km/h?"));
+		  t = Number(prompt("What is the reaction time t of the driver is entered in seconds?"));
+          r = (v*t)/3.6;   //the formula of the reaction distance
+		  s = ((Math.pow(v,2)))/233;   //the formula of the stoping distance
+		  Total = s+r;
+		  document.getElementById("result").innerHTML = "The reaction distance is " + r.toFixed(2) ;
+          document.getElementById("result1").innerHTML = "The stoping distance is " + s.toFixed(2) ;
+		  document.getElementById("result2").innerHTML = "The total distance is " + Total.toFixed(2);
+      </script>
+   </body>
+
+</html>

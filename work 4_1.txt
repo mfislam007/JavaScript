@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Sum of numbers</title>
+<script>
+function calculate() {
+    var sum = 0;   //the sum of the numbers, initialized as zero
+    var num;       //the number
+    var output = "";
+
+    num = Number(prompt("Enter a number (0 indicates the end of numbers)", "0"));  //prompt and read the first number
+    while(num != 0)  {             //while the number entered is not 0
+        sum = sum + num;      //add the number to the sum
+        output = output + num + "<br>";
+        document.getElementById("id1").innerHTML = output;
+        num = Number(prompt("Enter a number (0 indicates the end of numbers)", "0")); //prompt the next number
+    }
+    output = output + "The sum is " + sum;
+    document.getElementById("id1").innerHTML = output;
+}
+</script>
+
+</head>
+
+<body>
+
+<h1>while example: the sum of many numbers</h1>
+
+<button onclick="calculate()">Start</button>
+
+<p id="id1"></p>
+
+</body>
+</html>

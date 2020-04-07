@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Product Name and Prices</title>
+
+<script>
+
+var products = ["Apple iPhone 6 Plus 16GB", "Apple iPhone 4S 8GB",
+"Apple iPhone 5s 32GB", "Doro Liberto 810", "Huawei Honor 7", "LG Neon 4G", "LG G45",
+"Microsoft Lumia 535", "Microsoft Lumia 640", "Nokia 108", "Samsung Galaxy J5",
+"Samsung Galaxy S5 Neo SM-G903F 16GB", "Samsung Galaxy S6 32GB", "Sony Xperia M4 Aqua"];
+var prices = [799, 250, 600, 249, 399, 129, 349, 98, 139, 25, 195, 395, 599, 269];
+var numbers = [10, 5, 6, 8, 9, 7, 5, 5, 10, 10, 12, 13, 7, 5];
+//Function initializes the select element
+function init() {
+    var i, opt;
+    var selectElement = document.getElementById("sel");
+    for(i = 0; i < products.length; i++) {
+        opt = new Option(products[i]); 
+        selectElement.options.add(opt);;
+    }
+    selectElement.onchange = display;
+}
+
+//Function displays the phone number of the person chosen
+function display() {
+    var index = document.getElementById("sel").selectedIndex;
+    var result = document.getElementById("result");
+	
+   
+        result.innerHTML = products[index] + ": Prices " +  prices[index]+ " inventory value:" + numbers[index] * prices[index];
+	
+}
+window.onload = init;
+
+function search() {
+    var max = Number(document.getElementById("max").value);
+	var min = Number(document.getElementById("min").value);
+    var  result; 
+    result = "";
+	
+	for (i=0; i<prices.length; i++){
+	
+	  if (prices[i] <= max && prices[i]>= min) {
+            result = result + products[i] + "<br>"; 
+            
+        }
+	}
+	
+    document.getElementById("result").innerHTML = result;	
+}
+
+
+</script>
+</head>
+
+<body>
+
+<h1>Product Name and Prices</h1>
+
+<select id="sel""></select>
+
+
+Max value: <input type="number" id="max">
+Min value: <input type="number" id="min">
+<input type="button" value="Search" onclick="search()" >
+
+<p id="result"></p>
+</body>
+</html>
